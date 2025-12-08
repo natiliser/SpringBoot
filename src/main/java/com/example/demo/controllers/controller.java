@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/api")
 public class controller {
 
+
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public ResponseEntity<?> hello(){
         return new ResponseEntity<>("Hello World!", HttpStatus.OK);
@@ -19,4 +20,6 @@ public class controller {
     public ResponseEntity<?> bye(){
         return new ResponseEntity<>("Bye World!", HttpStatus.OK);
     }
+
+
 }
