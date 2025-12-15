@@ -38,4 +38,13 @@ public class Student implements Serializable {
     @Length(max = 500)
     private String profilePicture;
 
+    public Student(){
+    }
+    public Student(String fullName, Integer psycoScore, Double graduationScore, String phone, String profilePicture) {
+        this.fullName = fullName;
+        this.psycoScore = psycoScore;
+        this.graduationScore = graduationScore;
+        this.phone = phone;
+        this.profilePicture = profilePicture;
+    }
 }
