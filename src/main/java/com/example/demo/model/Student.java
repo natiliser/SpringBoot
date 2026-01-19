@@ -1,8 +1,6 @@
 package com.example.demo.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
@@ -12,7 +10,6 @@ import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 
 @Entity @Table(name="student")
-@Getter @Setter @AllArgsConstructor
 public class Student implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -40,6 +37,47 @@ public class Student implements Serializable {
 
     public Student(){
     }
+
+    public @NotEmpty @Length(max = 30) String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(@NotEmpty @Length(max = 30) String fullName) {
+        this.fullName = fullName;
+    }
+
+    public @Min(100) @Max(800) Integer getPsycoScore() {
+        return psycoScore;
+    }
+
+    public void setPsycoScore(@Min(100) @Max(800) Integer psycoScore) {
+        this.psycoScore = psycoScore;
+    }
+
+    public @Min(30) @Max(100) Double getGraduationScore() {
+        return graduationScore;
+    }
+
+    public void setGraduationScore(@Min(30) @Max(100) Double graduationScore) {
+        this.graduationScore = graduationScore;
+    }
+
+    public @Length(max = 10) String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(@Length(max = 10) String phone) {
+        this.phone = phone;
+    }
+
+    public @Length(max = 500) String getProfilePicture() {
+        return profilePicture;
+    }
+
+    public void setProfilePicture(@Length(max = 500) String profilePicture) {
+        this.profilePicture = profilePicture;
+    }
+
     public Student(String fullName, Integer psycoScore, Double graduationScore, String phone, String profilePicture) {
         this.fullName = fullName;
         this.psycoScore = psycoScore;

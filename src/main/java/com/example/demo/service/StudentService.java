@@ -25,4 +25,17 @@ public class StudentService {
     public void delete(Student student) {
         repository.delete(student);
     }
+
+    public Optional<Student> findByFullName(String fullName) {
+        return repository.findByFullName(fullName);
+    }
+
+    public Optional<Student> findByPhone(String phone) {
+        return repository.findByPhone(phone);
+    }
+
+    public Optional<Student> findFirstByGraduationScore(double graduationScore) {
+        return repository.findFirstByGraduationScore(graduationScore);
+    }
+
 }
